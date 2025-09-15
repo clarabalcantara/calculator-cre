@@ -1,0 +1,45 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="CalculadoraAvalonia.MainWindow"
+        Title="Calculadora CRE" Width="450" Height="350"
+        Background="#fcd4b7">
+
+  <Window.Styles>
+    <Style Selector="TextBlock">
+      <Setter Property="Foreground" Value="#ff9286"/>
+      <Setter Property="FontWeight" Value="Bold"/>
+      <Setter Property="FontSize" Value="16"/>
+    </Style>
+
+    <Style Selector="TextBox">
+      <Setter Property="BorderBrush" Value="#ffc5ba"/>
+      <Setter Property="BorderThickness" Value="2"/>
+      <Setter Property="CornerRadius" Value="6"/>
+      <Setter Property="Padding" Value="8"/>
+      <Setter Property="FontSize" Value="14"/>
+    </Style>
+
+    <Style Selector="Button">
+      <Setter Property="Background" Value="#fbb3a5"/>
+      <Setter Property="Foreground" Value="White"/>
+      <Setter Property="FontWeight" Value="SemiBold"/>
+      <Setter Property="FontSize" Value="18"/>
+      <Setter Property="Padding" Value="12,8"/>
+      <Setter Property="CornerRadius" Value="8"/>
+      <Setter Property="Margin" Value="0,15,0,0"/>
+    </Style>
+  </Window.Styles>
+
+  <Grid Margin="20" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="*">
+    <TextBlock Text="Notas (separe por vírgula)" Grid.Row="0"/>
+    <TextBox x:Name="NotasInput" Watermark="ex: 7.0, 8.5, 9.2" Grid.Row="1" />
+
+    <TextBlock Text="Cargas Horárias (separe por vírgula)" Grid.Row="2" Margin="0,10,0,0"/>
+    <TextBox x:Name="CargasInput" Watermark="ex: 60, 45, 40" Grid.Row="3" />
+
+    <Button Content="Calcular CRE" Click="Calcular_Click" Grid.Row="4" HorizontalAlignment="Center" />
+
+    <TextBlock x:Name="ResultadoText" Grid.Row="5" FontWeight="Bold" FontSize="22" 
+               Margin="10" TextAlignment="Center" Foreground="#ec887a"/>
+  </Grid>
+</Window>
